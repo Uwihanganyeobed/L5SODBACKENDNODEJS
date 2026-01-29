@@ -25,6 +25,11 @@ const UsersSchema = new mongoose.Schema({
 })
 const User = mongoose.model("users", UsersSchema)
 //Get all users 
+
+app.get('/',function(req,res){
+    res.send('server is running')
+})
+
 app.get("/users", async function (req, resp) {
     try {
         const results = await User.find()
